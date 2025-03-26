@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Times New Roman', serif;
+    background-color: #f8f4e8;
+    color: #2b2b2b;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #8b0000;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    letter-spacing: 2px;
+}
+
+#map {
+    height: 600px;
+    width: 100%;
+    border: 8px solid #8b0000;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #fff4d2;
+}
+
+/* Custom popup styling */
+.leaflet-popup-content-wrapper {
+    background-color: #f8f4e8;
+    border: 2px solid #8b0000;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.leaflet-popup-tip {
+    background-color: #8b0000;
+}
+
+/* Timeline story styling */
+.timeline-story {
+    padding: 10px;
+    font-family: 'Times New Roman', serif;
+}
+
+.timeline-header {
+    border-bottom: 1px solid #8b0000;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.timeline-date {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 3px;
+}
+
+.timeline-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #8b0000;
+}
+
+.timeline-navigation button {
+    background-color: #f8f4e8;
+    border: 1px solid #8b0000;
+    color: #8b0000;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: 'Times New Roman', serif;
+    transition: all 0.3s ease;
+}
+
+.timeline-navigation button:hover:not(:disabled) {
+    background-color: #8b0000;
+    color: #f8f4e8;
+}
+
+.timeline-navigation button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.timeline-navigation span {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Custom zoom control styling */
+.leaflet-control-zoom a {
+    background-color: #f8f4e8 !important;
+    color: #8b0000 !important;
+    border-color: #8b0000 !important;
+}
+
+.leaflet-control-zoom a:hover {
+    background-color: #8b0000 !important;
+    color: #f8f4e8 !important;
+} 
