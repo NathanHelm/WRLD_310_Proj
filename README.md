@@ -43,5 +43,6 @@ To add new serpent mythology locations, edit the `serpentLocations` array in `sc
 
 - Leaflet.js for mapping
 - IIIF for historical map tiles
-- WMS tiles
+
+
 
