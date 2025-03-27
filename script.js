@@ -1,9 +1,9 @@
 // Initialize the map with custom options
 const map = L.map('map', {
-    center: [45.0, 10.0],
-    zoom: 4,
-    minZoom: 3,
-    maxZoom: 18,
+    center: [35.0, 100.0], // Centered between Greece and China
+    zoom: 3,
+    minZoom: 2,
+    maxZoom: 8,
     zoomControl: true
 });
 
@@ -23,89 +23,136 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 document.querySelector('#map').style.filter = 'sepia(30%) brightness(105%) contrast(95%) saturate(85%)';
 
 // This is where the stories can go
-// Each section ({}) is one card for that location. To add more cards, simply add more sections with the same structure (title, date, content).
-// The location is the coordinates are what youd use on google maps to find the location.
-// Current stories are filler stories to show as examples. 
+// Each section ({}) is one card for that location. To add more cards, simply add more sections with the same structure (title, date, content, symbolism).
+// The location is the coordinates that you'd use on google maps to find the location.
 // To add more locations, simply copy and paste the entire section and change the name, location, description, and timeline (cards).
+// The cards for each location are {title, date, content, symbolism}. The location section is {name, location, culture, description, timeline{cards}}.
 const serpentLocations = [
     {
-        name: "Python at Delphi",
+        name: "Python and Apollo at Delphi",
         location: [38.4824, 22.5010],
-        description: "The mythical Python serpent slain by Apollo at Delphi",
+        culture: "Greek",
+        description: "The sacred site where Apollo slew the mighty serpent Python to establish his oracle.",
         timeline: [
             {
-                title: "Origins",
+                title: "Python's Sacred Role",
                 date: "Ancient Times",
-                content: "Python, the earth-dragon of Delphi, was born from the mud left behind after the great flood."
+                content: "Python was a gigantic serpent that resided in the sacred cave of Delphi, guarding the ancient sanctuary. Python's role was to protect the Oracle of Gaia, a mystical site where prophecies were revealed.",
+                symbolism: "Guardian of ancient wisdom and primal forces of nature."
             },
             {
-                title: "Guardian of the Oracle",
-                date: "Pre-Apollonian Era",
-                content: "Python served as the guardian of the Oracle of Mother Earth at Delphi, protecting the sacred site."
+                title: "Apollo's Challenge",
+                date: "Divine Confrontation",
+                content: "Apollo, the god of prophecy, music, and light, was determined to take control of Delphi. In order to establish his own Oracle and become the divine protector of the site, Apollo had to defeat Python.",
+                symbolism: "Transition from Chaos to Order: The death of Python symbolizes Apollo's establishment of divine order."
             },
             {
-                title: "Apollo's Arrival",
-                date: "Mythical Era",
-                content: "Apollo, seeking to establish his oracle, confronted Python at the site of Delphi."
+                title: "The Sacred Battle",
+                date: "Divine Victory",
+                content: "Apollo, in a dramatic confrontation, killed Python with his arrows. In some versions of the story, Apollo's arrows were poisoned, and in others, they were said to have been imbued with the power of the sun.",
+                symbolism: "Sacred Authority: Apollo's victory allowed him to claim the Oracle of Delphi."
             },
             {
-                title: "The Battle",
-                date: "Mythical Era",
-                content: "Using his golden arrows, Apollo engaged in an epic battle with Python, eventually slaying the serpent."
+                title: "Oracle's Establishment",
+                date: "New Era",
+                content: "After slaying the serpent, Apollo purified himself and founded the Oracle of Delphi, which became one of the most significant religious sites in the ancient world. It was here that people from across the Greek world would come to receive prophecies from the god.",
+                symbolism: "Wisdom and Prophecy: Apollo's connection to the serpent's ancient association with wisdom and knowledge."
             }
         ]
     },
     {
-        name: "Midgard Serpent",
-        location: [59.9139, 10.7522],
-        description: "Jörmungandr, the world serpent of Norse mythology",
+        name: "Medusa the Gorgon",
+        location: [37.9838, 23.7275],
+        culture: "Greek",
+        description: "The tragic tale of a beautiful woman transformed into a serpent-haired Gorgon.",
         timeline: [
             {
-                title: "Birth of Jörmungandr",
-                date: "Beginning of Time",
-                content: "Born as one of three children to Loki and the giantess Angrboða."
+                title: "Medusa's Beauty",
+                date: "Before Transformation",
+                content: "Medusa was once a beautiful mortal woman, but her beauty attracted the attention of Poseidon, who pursued her relentlessly.",
+                symbolism: "The vulnerability of mortal beauty in the divine realm."
             },
             {
-                title: "Cast into the Ocean",
-                date: "Early Days",
-                content: "Odin threw Jörmungandr into the great ocean that encircles Midgard."
+                title: "The Curse",
+                date: "Moment of Transformation",
+                content: "In some versions of the myth, Poseidon raped Medusa in Athena's temple, desecrating the holy space. Athena, enraged by this violation of her temple, punished Medusa by turning her into a Gorgon, a terrifying creature with snakes for hair and the ability to turn anyone who looked at her into stone.",
+                symbolism: "Danger and Transformation: Medusa represents the fearsome, dangerous aspect of the feminine, transformed into a monster."
             },
             {
-                title: "Growth",
-                date: "Age of Vikings",
-                content: "The serpent grew so large it was able to surround the earth and grasp its own tail."
+                title: "Life in Exile",
+                date: "Years of Isolation",
+                content: "Medusa was banished to a desolate island, where she lived in isolation, her gaze a constant threat to anyone who came near.",
+                symbolism: "The Unknown and Fear of Female Power: Medusa embodies society's fear of powerful women."
             },
             {
-                title: "Ragnarök Prophecy",
-                date: "End Times",
-                content: "It is said that during Ragnarök, Thor and Jörmungandr will slay each other in a final battle."
+                title: "Perseus and Destiny",
+                date: "Hero's Quest",
+                content: "The hero Perseus, tasked with obtaining Medusa's head by King Polydectes, used Athena's shield, Hermes' winged sandals, and a special sword to approach Medusa without looking directly at her. He used the reflection in his shield to avoid her petrifying gaze, and with a swift strike, he beheaded her. From her blood, the winged horse Pegasus was born.",
+                symbolism: "Death and Rebirth: Through her death, new life (Pegasus) is born."
             }
         ]
     },
     {
-        name: "Dragon of Colchis",
-        location: [42.1662, 42.9754],
-        description: "The serpent that guarded the Golden Fleece",
+        name: "Nuwa and Fuxi",
+        location: [34.3416, 108.9398],
+        culture: "Chinese",
+        description: "The serpent-bodied creator deities who shaped humanity and civilization.",
         timeline: [
             {
-                title: "Guardian's Origin",
-                date: "Age of Heroes",
-                content: "The never-sleeping serpent was placed by Ares to guard the Golden Fleece."
+                title: "Cosmic Disaster",
+                date: "Primordial Times",
+                content: "After a great cosmic disaster that left the sky fractured and the earth in disarray, Nuwa and Fuxi came to the rescue. Nuwa repaired the broken sky with the help of five-colored stones, preventing the collapse of the heavens.",
+                symbolism: "Creation and Balance: Nuwa and Fuxi's roles symbolize balance and harmony in the universe."
             },
             {
-                title: "Years of Guardianship",
-                date: "Pre-Argonaut Era",
-                content: "For years, the dragon successfully protected the Golden Fleece from all who sought it."
+                title: "Creation of Humanity",
+                date: "Dawn of Humankind",
+                content: "Nuwa crafted the first humans from clay, shaping them one by one. She later perfected her method by dipping a rope into the river, and the drops that fell from it became human beings.",
+                symbolism: "Duality and Interdependence: The brother-sister duo represents complementary forces working together."
             },
             {
-                title: "Arrival of the Argonauts",
-                date: "Time of Jason",
-                content: "Jason and the Argonauts arrived in Colchis seeking the Golden Fleece."
+                title: "Teaching Civilization",
+                date: "Early Human Era",
+                content: "Fuxi, known for his wisdom and guidance, brought civilization to the people, teaching them to fish, trap, and live harmoniously with nature.",
+                symbolism: "Divine Guidance: Fuxi's role in teaching humanity represents the bridge between divine wisdom and human development."
             },
             {
-                title: "Medea's Intervention",
-                date: "Time of Jason",
-                content: "With Medea's magic, the dragon was put to sleep, allowing Jason to steal the Fleece."
+                title: "Divine Legacy",
+                date: "Eternal",
+                content: "These two deities are often depicted with snake-like bodies as a symbol of their connection to the natural world and divine power.",
+                symbolism: "Serpent-like Form and Divine Nature: Their serpentine features connect them to earth, nature, and divine power."
+            }
+        ]
+    },
+    {
+        name: "White Snake Legend",
+        location: [30.2420, 120.1122],
+        culture: "Chinese",
+        description: "The tragic love story between a woman and a serpent spirit.",
+        timeline: [
+            {
+                title: "The Transformation",
+                date: "Ancient Times",
+                content: "A powerful serpent spirit, who had lived for centuries, transformed into a beautiful woman named Madame White Snake.",
+                symbolism: "Transformation and Dual Identity: The complexity of identity and the blending of supernatural and human realms."
+            },
+            {
+                title: "Forbidden Love",
+                date: "Time of Romance",
+                content: "During her time in human form, she met and fell in love with a kind-hearted man named Xu Xian, who was unaware of her true nature.",
+                symbolism: "Love and Loyalty vs. Tradition and Taboo: The tension between societal norms and individual desires."
+            },
+            {
+                title: "Discovery and Persecution",
+                date: "Time of Trial",
+                content: "A Buddhist monk named Fa Hai soon discovered Madame White Snake's true identity. He saw her as a dangerous being, and fearing the chaos she could cause, he forced her to reveal her serpent form.",
+                symbolism: "Misunderstood Supernatural Beings: Challenging the belief that serpents are inherently evil."
+            },
+            {
+                title: "Eternal Love",
+                date: "Centuries of Waiting",
+                content: "With great sorrow, Madame White Snake was imprisoned beneath the Leifeng Pagoda, where she remains for centuries. However, she continues to send her husband dreams and signs of her love, and eventually, their love transcends the barriers of life and death.",
+                symbolism: "The power of love to transcend physical and spiritual barriers."
             }
         ]
     }
@@ -121,19 +168,21 @@ const serpentIcon = L.icon({
     shadowSize: [41, 41]
 });
 
-// Function to create timeline navigation for each location
-// Can be customized to include more information about the location
-// Change the look
-
+// Function to create timeline navigation with enhanced display
 function createTimelineNavigation(location, currentIndex = 0) {
     const story = location.timeline[currentIndex];
     return `
         <div class="timeline-story" data-location-index="${serpentLocations.indexOf(location)}">
+            <h2 style="margin: 0 0 15px 0; color: #8b0000; font-size: 1.4em; text-align: center; border-bottom: 2px solid #8b0000; padding-bottom: 8px;">${location.name}</h2>
             <div class="timeline-header">
                 <h3 style="margin: 0 0 5px 0; color: #8b0000;">${story.title}</h3>
+                <div class="culture-badge">${location.culture} Mythology</div>
                 <div class="timeline-date">${story.date}</div>
             </div>
             <p style="margin: 10px 0;">${story.content}</p>
+            <div class="symbolism-section">
+                <em>Symbolism:</em> ${story.symbolism}
+            </div>
             <div class="timeline-navigation">
                 <button class="nav-button" data-direction="prev" data-index="${currentIndex - 1}" 
                     ${currentIndex === 0 ? 'disabled' : ''}>◀</button>
@@ -200,19 +249,22 @@ serpentLocations.forEach((location, index) => {
         currentLocationIndex = index;
         currentTimelineIndex = 0;
 
-        // Zoom and pan to the marker with animation (this is the zoom level and the speed of the animation)
-        // You can change the zoom level and the speed of the animation by changing the numbers
-        // The first number is the zoom level and the second number is the speed of the animation
-        // The higher the number, the faster the animation
-        // The lower the number, the slower the animation
-        // The default zoom level is 6 and the default speed is 0.25
-        map.flyTo(location.location, 6, {
+        // Get the map container size
+        const mapHeight = map.getContainer().clientHeight;
+        
+        // Calculate an offset point to position the marker lower in the viewport
+        const point = map.project(location.location, 6) // Project the location at zoom level 6
+            .subtract([0, +mapHeight/4]); // Shift the point up by 1/4 of the map height (which shifts the view down)
+        
+        // Convert back to LatLng and fly to that point
+        const offsetLatLng = map.unproject(point, 6);
+        
+        map.flyTo(offsetLatLng, 6, {
             duration: 1.5,
             easeLinearity: 0.25
         });
     });
 
-    
     marker.on('popupclose', () => {
         // Reset zoom and view when popup is closed
         map.flyTo([20.0, 0.0], 2, {

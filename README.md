@@ -19,6 +19,8 @@ git clone https://github.com/NathanHelm/WRLD_310_Proj.git
 
 2. Open `index.html` in a web browser to view the map.
 
+3. Map is veiwable live at http://137.184.239.134:3000/
+
 ## Adding New Locations
 
 To add new serpent mythology locations, edit the `serpentLocations` array in `script.js`. Each location should follow this format:
@@ -32,7 +34,8 @@ To add new serpent mythology locations, edit the `serpentLocations` array in `sc
         {
             title: "Event Title",
             date: "Time Period",
-            content: "Event description"
+            content: "Event description",
+            symbolism: "Symbolism of the event"
         }
         // Add more timeline events...
     ]

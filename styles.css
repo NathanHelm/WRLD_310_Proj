@@ -37,6 +37,7 @@ h1 {
     border: 2px solid #8b0000;
     border-radius: 4px;
     padding: 5px;
+    min-width: 300px;
 }
 
 .leaflet-popup-tip {
@@ -55,11 +56,29 @@ h1 {
     margin-bottom: 10px;
 }
 
+.culture-badge {
+    display: inline-block;
+    background-color: #8b0000;
+    color: #f8f4e8;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin: 5px 0;
+}
+
 .timeline-date {
     font-style: italic;
     color: #666;
     font-size: 0.9em;
     margin-top: 3px;
+}
+
+.symbolism-section {
+    margin: 10px 0;
+    padding: 8px;
+    background-color: rgba(139, 0, 0, 0.1);
+    border-left: 3px solid #8b0000;
+    font-size: 0.9em;
 }
 
 .timeline-navigation {
