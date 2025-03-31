@@ -127,8 +127,44 @@ h1 {
     background-color: #8b0000 !important;
     color: #f8f4e8 !important;
 } 
-.myth-title:hover{
-    background-color: #8b0000 !important;
-    color: #f8f4e8 !important;
-    border-radius: 10px;
+.myth-title {
+    margin: 0 0 15px 0;
+    color: #8b0000;
+    font-size: 1.4em;
+    text-align: center;
+    border-bottom: 2px solid #8b0000;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(139, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+.myth-title:hover {
+    background-color: #8b0000;
+    color: #f8f4e8;
+    transform: scale(1.02);
+}
+
+.hover-title {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(139, 0, 0, 0.9);
+    color: #f8f4e8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Times New Roman', serif;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hover-title.visible {
+    opacity: 1;
 }

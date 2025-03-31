@@ -4,41 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./myth.css">
-    <title>Document</title>
-    
+    <title>Mythological Tale</title>
+    <link rel="stylesheet" href="myth.css">
 </head>
 <body>
-<div class="page">
-    <div class="flex-row-parent">
-    <div class="child"> 
-       <div><h1 class="title"> title </h1> </div>
-        <div> <h2 class="country"> china [country]</div>
-       <div> <h2 class="description"> python sacred role [desc] </h2> </div>
-    </div>
-    <div class="child">
-        <figure class="myth-photo">
-            <img src="./myth_profile_photos/myth_example.jpeg" alt="myth photo" />
-            <figcaption>
-            a caption for our image.
-            </figcaption>
-        </figure>
-        
-    </div>
-    </div>
-    
-    <div class="flex-column-parent">
-    <!--story box goes here, append child in js-->
-    <fieldset class="story">
-        <legend> <p> Myth 1 ~ </p></legend>
-        <p> description of myth</p>
-    </fieldset>
-    </div>
-   
-   
-</div>
+    <div class="myth-container">
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
 
+        <div class="myth-header">
+            <h1 id="mythTitle" class="myth-title"></h1>
+            <div id="mythCulture" class="myth-culture"></div>
+        </div>
 
+        <div id="mythContent" class="myth-content"></div>
+
+        <a href="index.html" class="back-button">← Back to Map</a>
+    </div>
+
+    <script src="myth.js"></script>
 </body>
-<script src = "./myth.js"> </script>
 </html>
