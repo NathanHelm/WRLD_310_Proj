@@ -1,3 +1,4 @@
+const baseURL = "http://localhost:3000";
 // Initialize the map with custom options
 const map = L.map('map', {
     center: [35.0, 100.0], // Centered between Greece and China
@@ -173,7 +174,8 @@ function createTimelineNavigation(location, currentIndex = 0) {
     const story = location.timeline[currentIndex];
     return `
         <div class="timeline-story" data-location-index="${serpentLocations.indexOf(location)}">
-            <h2 style="margin: 0 0 15px 0; color: #8b0000; font-size: 1.4em; text-align: center; border-bottom: 2px solid #8b0000; padding-bottom: 8px;">${location.name}</h2>
+
+            <h2 class="myth-title" style="margin: 0 0 15px 0; color: #8b0000; font-size: 1.4em; text-align: center; border-bottom: 2px solid #8b0000; padding-bottom: 8px;">${location.name}</h2>
             <div class="timeline-header">
                 <h3 style="margin: 0 0 5px 0; color: #8b0000;">${story.title}</h3>
                 <div class="culture-badge">${location.culture} Mythology</div>
@@ -206,6 +208,13 @@ document.addEventListener('click', function(e) {
         e.stopPropagation();
         const newIndex = parseInt(e.target.dataset.index);
         navigateTimeline(newIndex);
+    }
+    if(e.target.classList.contains('myth-title'))
+    {
+        //take me to a new link
+        console.log("I was clicked!");
+        postMythData(e);
+
     }
 });
 
@@ -274,3 +283,37 @@ serpentLocations.forEach((location, index) => {
 
     marker.addTo(map);
 }); 
+let storyData = ""; //gets serpent data based on current location index. 
+async function postMythData(e)
+{
+    e.preventDefault();
+
+    if(currentLocationIndex < 0 || currentLocationIndex > serpentLocations.length - 1)
+    {
+        return;
+    }
+    storyData = serpentLocations[currentLocationIndex];
+    
+    if(!storyData)
+    {
+        return;
+    }
+    if(storyData == '')
+    {
+        return; //no post.
+    }
+    //if there if story data, pass data to the backend. 
+    const mythURL = baseURL + '/myth';
+    const res = await fetch(mythURL,
+    {
+        method : 'POST',
+        headers :{
+            "Content-Type" : 'application/json'
+        },
+        body : JSON.stringify({
+            parcel : storyData
+        })
+    }
+    );
+}
+

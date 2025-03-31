@@ -1,0 +1,76 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  img{
+    animation: fadeIn 2s ease-in;
+  }
+
+
+.flex-row-parent{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-row-parent .child{
+    
+    border-radius: 5px;
+}
+.flex-column-parent{
+    
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+
+.myth-photo img{
+   
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    
+}
+body{
+   background-color:#beae86;;
+   
+  
+}
+.page{
+    background-color: #f8f4e8;
+    border-style: solid;
+    border-color: #8b0000;
+    border-radius: 5px;
+    max-width: 1200px;
+    
+}
+.title{
+    font-size: 57px;
+    color: rgb(84, 64, 44);
+  
+}
+.country{
+
+}
+.description{
+
+}
+.story{
+   
+    background-color : rgba(117, 76, 41, 0.512);
+    border-radius: 5px;
+    margin-left: 100px;
+    max-width: 800px;
+    
+   
+} 
+.story legend p{
+    font-size: 50px;
+    color: rgb(84, 64, 44);
+  
+}
+.story > p{
+    font-size: 20px;
+}
