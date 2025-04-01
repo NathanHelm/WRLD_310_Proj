@@ -23,12 +23,293 @@ h1 {
 }
 
 #map {
+    position: relative;
     height: 600px;
     width: 100%;
-    border: 8px solid #8b0000;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
     background-color: #fff4d2;
+    z-index: 1;
+}
+
+.map-container {
+    position: relative;
+    padding: 40px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.map-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+/* Pillars */
+.pillar-left, .pillar-right {
+    position: absolute;
+    width: 40px;
+    height: calc(100% - 80px);
+    background: repeating-linear-gradient(
+        to bottom,
+        #8b0000 0%,
+        #a52a2a 2%,
+        #8b0000 4%,
+        #a52a2a 6%,
+        #8b0000 8%,
+        #a52a2a 10%
+    );
+    top: 40px;
+    z-index: 15;
+    box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.3), 
+                inset 2px 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.pillar-left { left: 0; }
+.pillar-right { right: 0; }
+
+/* Add spiral gold decoration to pillars */
+.pillar-left::before, .pillar-right::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    height: 40px;
+    background: linear-gradient(
+        to bottom,
+        #8b0000 0%,
+        #a52a2a 30%,
+        #8b0000 60%,
+        #a52a2a 100%
+    );
+    top: -40px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Gold spiral effect */
+.pillar-left, .pillar-right {
+    background-image: 
+        /* Base pillar texture */
+        repeating-linear-gradient(
+            to bottom,
+            #8b0000 0%,
+            #a52a2a 2%,
+            #8b0000 4%,
+            #a52a2a 6%,
+            #8b0000 8%,
+            #a52a2a 10%
+        ),
+        /* Vertical fluting */
+        repeating-linear-gradient(
+            to right,
+            transparent 0px,
+            transparent 3px,
+            rgba(0, 0, 0, 0.1) 3px,
+            rgba(0, 0, 0, 0.1) 6px
+        ),
+        /* Gold spiral */
+        repeating-linear-gradient(
+            45deg,
+            transparent 0%,
+            transparent 10%,
+            rgba(255, 215, 0, 0.2) 10%,
+            rgba(255, 215, 0, 0.2) 20%
+        ),
+        /* Additional gold accent */
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0%,
+            transparent 10%,
+            rgba(218, 165, 32, 0.2) 10%,
+            rgba(218, 165, 32, 0.2) 20%
+        );
+    background-blend-mode: overlay, overlay, soft-light, soft-light;
+    animation: rotateSpiral 20s linear infinite;
+}
+
+/* Animate the spiral */
+@keyframes rotateSpiral {
+    from {
+        background-position: 
+            0 0,
+            0 0,
+            0 0,
+            0 0;
+    }
+    to {
+        background-position: 
+            0 100%,
+            0 0,
+            0 100%,
+            0 -100%;
+    }
+}
+
+/* Enhance pillar capitals with gold accents */
+.pillar-left::before, .pillar-right::before {
+    border-top: 2px solid #ffd700;
+    border-bottom: 2px solid #ffd700;
+    background-image: linear-gradient(
+        to bottom,
+        #8b0000 0%,
+        #a52a2a 30%,
+        #8b0000 60%,
+        #a52a2a 100%
+    ),
+    linear-gradient(
+        45deg,
+        transparent 45%,
+        #ffd700 45%,
+        #ffd700 55%,
+        transparent 55%
+    );
+    background-blend-mode: normal, overlay;
+}
+
+/* Enhance pillar bases with gold accents */
+.pillar-left::after, .pillar-right::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    height: 40px;
+    bottom: -40px;
+    border-radius: 0 0 5px 5px;
+    border-top: 2px solid #ffd700;
+    border-bottom: 2px solid #ffd700;
+    background-image: 
+        linear-gradient(
+            to bottom,
+            #a52a2a 0%,
+            #8b0000 40%,
+            #a52a2a 70%,
+            #8b0000 100%
+        ),
+        linear-gradient(
+            -45deg,
+            transparent 45%,
+            #ffd700 45%,
+            #ffd700 55%,
+            transparent 55%
+        );
+    background-blend-mode: normal, overlay;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Pillar decorative details */
+.pillar-left::before, .pillar-right::before,
+.pillar-left::after, .pillar-right::after {
+    content: '';
+    position: absolute;
+    left: -15px;
+    right: -15px;
+}
+
+/* Add decorative lines to pillar capitals */
+.pillar-left::before, .pillar-right::before {
+    border-top: 2px solid #660000;
+    border-bottom: 2px solid #660000;
+}
+
+/* Add decorative lines to pillar bases */
+.pillar-left::after, .pillar-right::after {
+    border-top: 2px solid #660000;
+    border-bottom: 2px solid #660000;
+}
+
+/* Snake borders */
+.snake-border-top, .snake-border-bottom {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    height: 40px;
+    background-color: #f4d03f;
+    background-image: 
+        /* Parchment texture */
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="40" viewBox="0 0 100 40"><path d="M0,20 Q25,5 50,20 T100,20" fill="none" stroke="%238b0000" stroke-width="2" opacity="0.3"/><path d="M0,25 Q25,40 50,25 T100,25" fill="none" stroke="%238b0000" stroke-width="2" opacity="0.2"/></svg>'),
+        /* Aged effect */
+        repeating-linear-gradient(
+            45deg,
+            rgba(139, 0, 0, 0.05) 0px,
+            rgba(139, 0, 0, 0.05) 2px,
+            transparent 2px,
+            transparent 4px
+        ),
+        /* Paper texture */
+        linear-gradient(
+            to right,
+            #d4b587 0%,
+            #e5c9a5 25%,
+            #d4b587 50%,
+            #e5c9a5 75%,
+            #d4b587 100%
+        );
+    background-repeat: repeat-x, repeat, repeat;
+    background-size: 100px 40px, 6px 6px, 100% 100%;
+    border-top: 2px solid rgba(139, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(139, 0, 0, 0.3);
+    box-shadow: 
+        inset 0 2px 5px rgba(0, 0, 0, 0.1),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.snake-border-top {
+    top: 0;
+    transform: rotate(180deg);
+    border-radius: 0 0 10px 10px;
+}
+
+.snake-border-bottom {
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Add decorative corners to borders */
+.snake-border-top::before,
+.snake-border-top::after,
+.snake-border-bottom::before,
+.snake-border-bottom::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M15,0 Q30,0 30,15 Q30,30 15,30 Q0,30 0,15 Q0,0 15,0 Z" fill="%238b0000" opacity="0.2"/><path d="M15,5 Q25,5 25,15 Q25,25 15,25 Q5,25 5,15 Q5,5 15,5 Z" fill="none" stroke="%238b0000" stroke-width="2"/></svg>');
+    background-size: contain;
+}
+
+.snake-border-top::before {
+    left: -20px;
+    top: 5px;
+}
+
+.snake-border-top::after {
+    right: -20px;
+    top: 5px;
+}
+
+.snake-border-bottom::before {
+    left: -20px;
+    bottom: 5px;
+}
+
+.snake-border-bottom::after {
+    right: -20px;
+    bottom: 5px;
+}
+
+/* Add a subtle animation to simulate paper movement */
+@keyframes paperWave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(1px); }
+}
+
+.snake-border-top, .snake-border-bottom {
+    animation: paperWave 4s ease-in-out infinite;
 }
 
 /* Custom popup styling */
@@ -127,3 +408,364 @@ h1 {
     background-color: #8b0000 !important;
     color: #f8f4e8 !important;
 } 
+.myth-title {
+    margin: 0 0 15px 0;
+    color: #8b0000;
+    font-size: 1.4em;
+    text-align: center;
+    border-bottom: 2px solid #8b0000;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: rgba(139, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+.myth-title:hover {
+    background-color: #8b0000;
+    color: #f8f4e8;
+    transform: scale(1.02);
+}
+
+.hover-title {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(139, 0, 0, 0.9);
+    color: #f8f4e8;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-family: 'Times New Roman', serif;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hover-title.visible {
+    opacity: 1;
+}
+
+/* Scroll animations */
+@keyframes unfurlLeft {
+    0% {
+        transform: translateX(50%);
+        width: 100%;
+    }
+    20% {
+        transform: translateX(50%);
+        width: 100%;
+    }
+    100% {
+        transform: translateX(-100%);
+        width: 50%;
+        opacity: 0;
+    }
+}
+
+@keyframes unfurlRight {
+    0% {
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    20% {
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    100% {
+        transform: translateX(100%);
+        width: 50%;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInMap {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Scroll designs */
+.scroll-left, .scroll-right {
+    position: absolute;
+    height: calc(100% - 40px);
+    top: 20px;
+    background-color: #d4b587;
+    background-image: 
+        linear-gradient(90deg, rgba(139, 0, 0, 0.2) 0%, rgba(139, 0, 0, 0.1) 100%),
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0,50 Q25,25 50,50 T100,50" fill="none" stroke="%238b0000" stroke-width="2" opacity="0.3"/></svg>');
+    background-size: cover, 100px 100px;
+    background-repeat: repeat;
+    z-index: 1;
+    opacity: 1;
+}
+
+.scroll-left {
+    left: 0;
+    width: 100%;
+    border-right: 5px solid #8b0000;
+    transform: translateX(50%);
+}
+
+.scroll-right {
+    right: 0;
+    width: 100%;
+    border-left: 5px solid #8b0000;
+    transform: translateX(-50%);
+}
+
+/* Only apply animations on first visit */
+.first-visit .scroll-left {
+    animation: unfurlLeft 2.5s ease-in-out 1s forwards;
+}
+
+.first-visit .scroll-right {
+    animation: unfurlRight 2.5s ease-in-out 1s forwards;
+}
+
+.first-visit #map {
+    opacity: 0;
+    animation: fadeInMap 1.5s ease-out 3.5s forwards;
+}
+
+.first-visit .guide-character {
+    opacity: 0;
+    animation: fadeInGuide 1s ease-out 4s forwards;
+}
+
+/* Non-first visit styles */
+body:not(.first-visit) #map {
+    opacity: 1;
+}
+
+body:not(.first-visit) .scroll-left,
+body:not(.first-visit) .scroll-right,
+body:not(.first-visit) .guide-character {
+    display: none;
+}
+
+/* Add decorative edges to scrolls */
+.scroll-left::after, .scroll-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(90deg, 
+        #8b0000 0%, 
+        #a52a2a 50%, 
+        #8b0000 100%
+    );
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-left::after {
+    right: 0;
+    border-radius: 0 15px 15px 0;
+}
+
+.scroll-right::after {
+    left: 0;
+    border-radius: 15px 0 0 15px;
+}
+
+/* Guide Character */
+.guide-character {
+    position: absolute;
+    left: 60px;
+    bottom: 40px;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    animation: fadeInGuide 1s ease-out 5.5s forwards;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+}
+
+.guide-character.fade-out {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.character-image {
+    font-size: 40px;
+    margin-left: 10px;
+    transform-origin: bottom;
+    animation: bobbing 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.character-bubble {
+    background-color: #fff;
+    border: 2px solid #8b0000;
+    border-radius: 15px;
+    padding: 15px;
+    max-width: 250px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    pointer-events: auto;
+}
+
+.close-guide {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: #8b0000;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+    line-height: 1;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.close-guide:hover {
+    background-color: rgba(139, 0, 0, 0.1);
+}
+
+.character-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid #8b0000;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.character-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: -7px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid #fff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    z-index: 1;
+}
+
+.character-bubble p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.4;
+    color: #333;
+}
+
+@keyframes fadeInGuide {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bobbing {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-5px) rotate(5deg);
+    }
+}
+
+/* Decorative map images */
+.map-decoration {
+    display: none;
+}
+
+/* Border decorations */
+.border-decoration {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.border-decoration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: sepia(20%);
+    opacity: 0.7;
+    transition: transform 0.3s ease;
+}
+
+.border-decoration img:hover {
+    transform: scale(1.1);
+}
+
+/* Position the decorations */
+.border-top-left {
+    top: 20px;
+    left: 20px;
+    transform: rotate(-15deg);
+}
+
+.border-top-center {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg);
+}
+
+.border-top-right {
+    top: 20px;
+    right: 20px;
+    transform: rotate(15deg);
+}
+
+.border-right-top {
+    top: 30%;
+    right: 20px;
+    transform: rotate(10deg);
+}
+
+.border-right-bottom {
+    bottom: 25%;
+    right: 20px;
+    transform: rotate(-10deg);
+}
+
+.border-bottom-right {
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(-15deg);
+}
+
+.border-bottom-center {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+}
+
+.border-bottom-left {
+    bottom: 40px;
+    left: 20px;
+    transform: rotate(15deg);
+}
+
+.border-left-top {
+    top: 25%;
+    left: 20px;
+    transform: rotate(-10deg);
+}
+
+.border-left-bottom {
+    bottom: 30%;
+    left: 20px;
+    transform: rotate(10deg);
+}

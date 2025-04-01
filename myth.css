@@ -1,0 +1,289 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+.myth-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: #fff;
+    border: 12px solid #8b0000;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    background-image: none;
+    animation: fadeIn 1s ease-in;
+}
+
+.myth-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px double #8b0000;
+    padding-bottom: 20px;
+}
+
+.myth-title {
+    color: #8b0000;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.myth-culture {
+    display: inline-block;
+    background-color: #8b0000;
+    color: #f8f4e8;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.1em;
+    margin: 10px 0;
+  }
+
+.myth-content {
+    font-size: 1.2em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 0 20px;
+    color: #333;
+    font-family: 'Times New Roman', serif;
+}
+
+.symbolism-container {
+    background: rgba(139, 0, 0, 0.1);
+    border-left: 5px solid #8b0000;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.symbolism-title {
+    color: #8b0000;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.symbolism-item {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8b0000;
+    color: #f8f4e8;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #660000;
+}
+
+/* Decorative elements */
+.corner-decoration {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #8b0000;
+}
+
+.top-left { top: -3px; left: -3px; border-right: none; border-bottom: none; }
+.top-right { top: -3px; right: -3px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: -3px; left: -3px; border-right: none; border-top: none; }
+.bottom-right { bottom: -3px; right: -3px; border-left: none; border-top: none; }
+
+body {
+    background-color: #e6dcc6;
+    margin: 0;
+    padding: 20px;
+    font-family: 'Times New Roman', serif;
+}
+
+.flex-row-parent{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-row-parent .child{
+    
+    border-radius: 5px;
+}
+.flex-column-parent{
+    
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+
+.myth-photo img{
+   
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    
+}
+body{
+   background-color:#beae86;;
+   
+  
+}
+.page{
+    background-color: #f8f4e8;
+    border-style: solid;
+    border-color: #8b0000;
+    border-radius: 5px;
+    max-width: 1200px;
+    
+}
+.title{
+    font-size: 57px;
+    color: rgb(84, 64, 44);
+  
+}
+
+.story{
+   
+    background-color : rgba(117, 76, 41, 0.512);
+    border-radius: 5px;
+    margin-left: 100px;
+    max-width: 800px;
+    
+   
+} 
+.story legend p{
+    font-size: 50px;
+    color: rgb(84, 64, 44);
+  
+}
+.story > p{
+    font-size: 20px;
+}
+
+.myth-introduction {
+    margin-bottom: 40px;
+}
+
+.myth-description {
+    font-size: 1.3em;
+    line-height: 1.9;
+    color: #333;
+    font-style: italic;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f8f4e8;
+    border-radius: 8px;
+}
+
+.historical-context {
+    background: #f8f4e8;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.historical-context h3 {
+    color: #8b0000;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.historical-context p {
+    line-height: 1.8;
+    color: #333;
+}
+
+.myth-timeline {
+    margin: 40px 0;
+}
+
+.myth-timeline h3 {
+    color: #8b0000;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.timeline-event {
+    margin-bottom: 35px;
+    padding: 25px;
+    background: #f8f4e8;
+    border-left: 4px solid #8b0000;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-event h4 {
+    color: #8b0000;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+.event-date {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.event-content {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.event-symbolism {
+    font-style: italic;
+    color: #8b0000;
+    padding: 15px;
+    background: rgba(139, 0, 0, 0.05);
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+.myth-analysis {
+    margin: 40px 0;
+    padding: 25px;
+    background: #f8f4e8;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.myth-analysis h3 {
+    color: #8b0000;
+    margin: 20px 0 15px 0;
+    font-size: 1.4em;
+}
+
+.myth-analysis p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.myth-image {
+    margin: 0 auto 30px auto;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.myth-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}

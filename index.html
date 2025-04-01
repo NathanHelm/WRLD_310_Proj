@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mythology Map</title>
+    <title>Serpent Mythology Map</title>
     
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -14,8 +14,53 @@
 </head>
 <body>
     <div class="container">
-        <h1>Mythology Map</h1>
-        <div id="map"></div>
+        <h1>Serpent Mythology Map</h1>
+        <div class="border-decoration border-top-left">
+            <img src="myth_profile_photos/medusa-removebg-preview.png" alt="Decoration">
+        </div>
+        
+        <div class="border-decoration border-top-right">
+            <img src="myth_profile_photos/dragon-serpent-connect-removebg-preview.png" alt="Decoration">
+        </div>
+        <div class="border-decoration border-right-top">
+            <img src="myth_profile_photos/nuwa_fuxi-removebg-preview.png" alt="Decoration">
+        </div>
+        <div class="border-decoration border-right-bottom">
+            <img src="myth_profile_photos/feathered-serp-removebg-preview.png" alt="Decoration">
+        </div>
+        <div class="border-decoration border-bottom-right">
+            <img src="myth_profile_photos/python-apollo-removebg-preview.png" alt="Decoration">
+        </div>
+        <div class="border-decoration border-bottom-left">
+            <img src="myth_profile_photos/wadjet-serpent-removebg-preview.png" alt="Decoration">
+        </div>
+        <div class="border-decoration border-left-top">
+            <img src="myth_profile_photos/Jor-removebg-preview.png" alt="Decoration">
+        </div>
+        <div class="border-decoration border-left-bottom">
+            <img src="myth_profile_photos/white-snake-removebg-preview.png" alt="Decoration">
+        </div>
+        <div class="map-container">
+            <div class="map-border">
+                <div class="pillar-left"></div>
+                <div class="pillar-right"></div>
+                <div class="snake-border-top"></div>
+                <div class="snake-border-bottom"></div>
+                <div class="scroll-left"></div>
+                <div class="scroll-right"></div>
+            </div>
+            <div id="map"></div>
+            <div class="guide-character">
+                <div class="character-bubble">
+                    <button class="close-guide">×</button>
+                    <p>Welcome to the Serpent Mythology Map! Click on a pin to discover serpent myths from different cultures around the world.</p>
+                </div>
+                <div class="character-image">
+                    🐍
+                </div>
+            </div>
+        </div>
+        <div id="hover-title" class="hover-title"></div>
     </div>
 
     <!-- Leaflet JavaScript -->
