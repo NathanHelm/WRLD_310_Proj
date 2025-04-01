@@ -4,19 +4,22 @@ const baseURL = window.location.origin;
 // Check if we're coming from myth.html
 const fromMythPage = document.referrer.includes('myth.html');
 
-// Check if this is a fresh session
+// Check if this is a fresh session, for the snake character message popup
 const isNewSession = !sessionStorage.getItem('hasVisitedInSession');
 if (!fromMythPage && isNewSession) {
     sessionStorage.setItem('hasVisitedInSession', 'true');
 }
 
 // Add class to body based on whether this is a fresh session and not from myth.html
+// This is so the snake character message popup only shows on the first visit to the page, and not when coming from the myth.html page.
 document.body.classList.toggle('first-visit', !fromMythPage && isNewSession);
 
 // Initialize variables for popup and timeline management
 let activePopup = null;
 let currentTimelineIndex = 0;
 let currentLocationIndex = null;
+let firstPinClicked = false;
+let messageUpdated = false;
 
 // Initialize the map with custom options
 const map = L.map('map', {
@@ -25,23 +28,26 @@ const map = L.map('map', {
     minZoom: 2,
     maxZoom: 8,
     zoomControl: true,
-    worldCopyJump: true // Enable world copy jump for better marker handling
+    worldCopyJump: true,
+    fadeAnimation: false
 });
 
-// This is the map style. You can change the style by changing the URL.
-// This is currently using WMS tiles from Carto.
-// If we want to add our own tiles, we can do that by changing the URL to our own tiles.
-// We can also use other tile providers like Mapbox or Google Maps.
-// We don't need to have the attribution, subdomains, or maxZoom.
-// maxZoom is the maximum zoom level into the map.
+// This changes the map color and the pin color and the pin popup color
+const mapElement = document.querySelector('#map');
+mapElement.style.filter = 'sepia(30%) brightness(105%) contrast(95%) saturate(85%)';
+
+// This is the map style
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '© OpenStreetMap contributors, © CARTO',
-    subdomains: 'abcd', //This is required to use this specific tile layer.
-    maxZoom: 18
+    subdomains: 'abcd',
+    maxZoom: 18,
+    noFade: true
 }).addTo(map);
 
-// Add a gentler sepia filter for better visibility
-document.querySelector('#map').style.filter = 'sepia(30%) brightness(105%) contrast(95%) saturate(85%)';
+// Prevent map from re-rendering by invalidating size after initial load
+setTimeout(() => {
+    map.invalidateSize();
+}, 100);
 
 // This is where the stories can go
 // Each section ({}) is one card for that location. To add more cards, simply add more sections with the same structure (title, date, content, symbolism).
@@ -309,7 +315,8 @@ const serpentLocations = [
     }
 ];
 
-// Custom icon for serpent locations with a more medieval style
+// Heres where you can add a custom icon for serpent locations with a more medieval style
+// Below is the current icon
 const serpentIcon = L.icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -319,7 +326,22 @@ const serpentIcon = L.icon({
     shadowSize: [41, 41]
 });
 
-// Function to create timeline navigation with enhanced display
+// This is what the custom icon could look like
+//const serpentIcon = {
+//  "Chinese": L.Divicon({ // Depending on what you want the icon to be. This doesn't need to be a div. But I noticed that making it a div allows it to show up properly.
+//    className: 'custom-icon',
+//    html: <div class="custom-icon">🐍</div>, // You can all use iconUrl here, if you have an icon image on the web. As well as the shadowUrl.
+//    iconSize: [25, 41],
+//    iconAnchor: [12, 41],
+//    popupAnchor: [1, -34],
+//  }
+
+
+// Function to create timeline navigation
+// If you change the map color. No matter what the color is set to in this section. It will stay as the map color:. 
+// const mapElement = document.querySelector('#map');
+// mapElement.style.filter = 'sepia(30%) brightness(105%) contrast(95%) saturate(85%)';
+// And I have no clue why. Probably something with leaflet.js.
 function createTimelineNavigation(location, currentIndex = 0) {
     const story = location.timeline[currentIndex];
     return `
@@ -345,7 +367,9 @@ function createTimelineNavigation(location, currentIndex = 0) {
     `;
 }
 
-// Global function to handle myth title clicks
+// Global function to handle myth title clicks. 
+// This is the function that is called when you click on a myth title.
+// Goes to the respectivemyth.html page.
 async function handleMythTitleClick(event, locationIndex) {
     event.preventDefault();
     
@@ -372,6 +396,7 @@ document.addEventListener('click', function(e) {
 });
 
 // Function to update timeline content
+// Navigates the timeline cards.
 function navigateTimeline(newIndex) {
     const locationElement = document.querySelector('.timeline-story');
     if (!locationElement) return;
@@ -386,6 +411,7 @@ function navigateTimeline(newIndex) {
         if (popup) {
             popup.innerHTML = popupContent;
             // Re-attach click handler to the new myth-title
+            // This is so the myth title can be clicked again on any timeline card.
             const mythTitle = popup.querySelector('.myth-title');
             if (mythTitle) {
                 mythTitle.style.cursor = 'pointer';
@@ -394,7 +420,43 @@ function navigateTimeline(newIndex) {
     }
 }
 
-// Add markers for each location with the timeline popup styling
+// Function to update guide message. There's only two guide messages.
+function updateGuideMessage(message) {
+    const guideBubble = document.querySelector('.character-bubble p');
+    if (guideBubble) {
+        guideBubble.textContent = message;
+    }
+}
+
+// Function to hide guide
+// This is the function that is called when you click on the close button.
+function hideGuide() {
+    const guide = document.querySelector('.guide-character');
+    if (guide) {
+        guide.classList.add('fade-out');
+        setTimeout(() => {
+            guide.style.display = 'none';
+        }, 400);
+    }
+}
+
+// Add click handler for the close button
+document.querySelector('.close-guide').addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    hideGuide(); // The above function is called.
+});
+
+// Hides second guide message if the myth title is clicked.
+document.addEventListener('click', (e) => {
+    if (firstPinClicked && messageUpdated && !e.target.classList.contains('nav-button') && 
+        !e.target.classList.contains('leaflet-marker-icon') && 
+        !e.target.classList.contains('close-guide')) {
+        hideGuide();
+    }
+});
+
+// Adds markers for each location with the timeline popup styling.
 serpentLocations.forEach((location, index) => {
     const marker = L.marker(location.location, {
         icon: serpentIcon
@@ -412,18 +474,16 @@ serpentLocations.forEach((location, index) => {
         hoverTitle.classList.remove('visible');
     });
 
-    // Add click handler to hide guide
+    // Add click handler for marker. This shows the second message if any pin is clicked.
     marker.on('click', () => {
-        const guide = document.querySelector('.guide-character');
-        if (guide) {
-            guide.style.opacity = '0';
-            guide.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                guide.style.display = 'none';
-            }, 400);
+        if (!firstPinClicked && isNewSession) {
+            firstPinClicked = true;
+            messageUpdated = true;
+            updateGuideMessage("Once you've clicked on a pin, click on the myth's title to see more information!");
         }
     });
-    
+
+    // This is the popup that shows the timeline cards.
     const popup = L.popup({
         className: 'custom-popup',
         maxWidth: 400,
@@ -435,28 +495,29 @@ serpentLocations.forEach((location, index) => {
     marker.bindPopup(popup);
 
     marker.on('click', () => {
-        // Close any previously open popup
+        // Close any previously open popup when navigating to a new location.
         if (activePopup && activePopup !== popup) {
             activePopup.close();
         }
         activePopup = popup;
         currentLocationIndex = index;
         currentTimelineIndex = 0;
-
-        // Get the map container size
+        
+        // All below is for zooming in on the clicked pin.
+        // Get the map container size.
         const mapHeight = map.getContainer().clientHeight;
         
         // Calculate an offset point to position the marker lower in the viewport
-        const point = map.project(location.location, 6) // Project the location at zoom level 6
-            .subtract([0, +mapHeight/4]); // Shift the point up by 1/4 of the map height
+        const point = map.project(location.location, 6)
+            .subtract([0, +mapHeight/4]);
         
         // Convert back to LatLng and fly to that point
         const offsetLatLng = map.unproject(point, 6);
         
         // Fly to the location with animation
         map.flyTo(offsetLatLng, 6, {
-            duration: 1.5,
-            easeLinearity: 0.25
+            duration: 1.5, // This is the duration of the zoom in animation.
+            easeLinearity: 0.25 // This is the ease/speed of the zoom in animation.
         });
     });
 

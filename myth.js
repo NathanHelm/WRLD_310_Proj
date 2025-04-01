@@ -1,7 +1,8 @@
 let mapData; 
+// This is the base URL for the server. Not needed for live.
 const baseURL = "http://localhost:3000";
 
-// Detailed myths database with extended information
+// Detailed myths with extended information
 const mythDetails = {
     "Python and Apollo at Delphi": {
         mainImage: "images/delphi.jpg",
@@ -100,6 +101,7 @@ const mythDetails = {
 };
 
 // Image mapping for each myth
+// Maps it to the name in the mythDetails object.
 const mythImages = {
     "Python and Apollo at Delphi": "myth_profile_photos/Apollo-and-Python.jpeg",
     "Medusa the Gorgon": "myth_profile_photos/medusa.jpg",
@@ -113,13 +115,13 @@ const mythImages = {
 };
 
 // Function to load myth data from localStorage and combine with detailed information
+// This takes info from the script.js file and combines it with the mythDetails object.
 function loadMythData() {
     try {
         const data = JSON.parse(localStorage.getItem('currentMythData'));
-        console.log("Loaded myth data:", data);
         
         if (!data) {
-            throw new Error('No myth data available');
+            throw new Error('No myth data available'); // This should ask the user to return to the map and try again. Instead of an error message.
         }
 
         // Get additional details for this myth
