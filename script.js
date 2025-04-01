@@ -1,6 +1,18 @@
 // Update the baseURL to work in both development and production
 const baseURL = window.location.origin;
 
+// Check if we're coming from myth.html
+const fromMythPage = document.referrer.includes('myth.html');
+
+// Check if this is a fresh session
+const isNewSession = !sessionStorage.getItem('hasVisitedInSession');
+if (!fromMythPage && isNewSession) {
+    sessionStorage.setItem('hasVisitedInSession', 'true');
+}
+
+// Add class to body based on whether this is a fresh session and not from myth.html
+document.body.classList.toggle('first-visit', !fromMythPage && isNewSession);
+
 // Initialize variables for popup and timeline management
 let activePopup = null;
 let currentTimelineIndex = 0;
@@ -8,11 +20,12 @@ let currentLocationIndex = null;
 
 // Initialize the map with custom options
 const map = L.map('map', {
-    center: [20.0, 0.0], // Center of the world
+    center: [20.0, 0.0],
     zoom: 2,
     minZoom: 2,
     maxZoom: 8,
-    zoomControl: true
+    zoomControl: true,
+    worldCopyJump: true // Enable world copy jump for better marker handling
 });
 
 // This is the map style. You can change the style by changing the URL.
@@ -397,6 +410,18 @@ serpentLocations.forEach((location, index) => {
     marker.on('mouseout', () => {
         const hoverTitle = document.getElementById('hover-title');
         hoverTitle.classList.remove('visible');
+    });
+
+    // Add click handler to hide guide
+    marker.on('click', () => {
+        const guide = document.querySelector('.guide-character');
+        if (guide) {
+            guide.style.opacity = '0';
+            guide.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                guide.style.display = 'none';
+            }, 400);
+        }
     });
     
     const popup = L.popup({
