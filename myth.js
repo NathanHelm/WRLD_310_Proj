@@ -97,6 +97,62 @@ const mythDetails = {
             modernInterpretation: "The combination of bird and serpent represents the unification of sky and earth, spiritual and physical realms, making it a symbol of wholeness and transcendence.",
          
         }
+    },
+
+    // new ones
+    "Yamata no Orochi and Susanoo": {
+        mainImage: "images/yamata-no-orochi.jpg",
+        additionalContent: {
+            fullStory: "Yamata no Orochi was a colossal, eight-headed, eight-tailed serpent that terrorized the province of Izumo. Every year, it demanded a sacrifice: a young maiden. When Susanoo, the storm god, was banished from the heavens, he encountered an elderly couple, Kunitsukami, weeping. They revealed that their eighth and last daughter, Kushinada-hime, was to be Orochi's next victim. Susanoo devised a plan. He instructed the couple to brew eight vats of strong sake and set them out for the serpent. When Orochi arrived, it drank the sake and fell into a deep slumber. Susanoo then drew his sword, Totsuka-no-Tsurugi, and sliced the serpent into pieces. As he cut through one of the tails, he discovered the legendary sword Kusanagi-no-Tsurugi within. Susanoo then presented the sword to his sister, Amaterasu, as a peace offering.",
+            historicalContext: "The myth of Yamata no Orochi is one of the most important stories in Japanese mythology, recorded in the Kojiki and Nihon Shoki, Japan's earliest written histories.",
+            culturalImpact: "The story represents the triumph of order over chaos and the importance of divine intervention in protecting humanity. The Kusanagi sword became one of the three Imperial Regalia of Japan.",
+            modernInterpretation: "The tale continues to influence Japanese popular culture, appearing in various forms in literature, art, and media. The theme of a hero defeating a multi-headed serpent resonates with similar myths worldwide."
+        }
+    },
+    "Ryūjin and the Sea's Bounty": {
+        mainImage: "images/myojin.jpg",
+        additionalContent: {
+            fullStory: "In coastal villages, tales were told of Ryūjin, a massive sea serpent that resided in the depths of the ocean. While sometimes fearsome, Ryūjin was also seen as a guardian of the sea's bounty. Fishermen would offer prayers and small gifts to Ryūjin, seeking its favor for a plentiful catch. One year, a severe famine struck the village. The fishermen, desperate, decided to make a grand offering to Ryūjin, hoping to appease its wrath and secure a source of food. They prepared a beautiful, decorated boat filled with the best of their harvest and set it adrift, carrying their prayers. Ryūjin, accepting the offering, guided schools of fish towards the shore, saving the village from starvation. It was then understood that Ryūjin was not only a powerful being, but also a provider.",
+            historicalContext: "The worship of sea deities has been an integral part of Japanese coastal culture, reflecting the maritime nation's deep connection with the ocean.",
+            culturalImpact: "This story exemplifies the complex relationship between Japanese coastal communities and the sea, emphasizing the importance of maintaining harmony with natural forces.",
+            modernInterpretation: "The myth of Ryūjin continues to resonate with themes of environmental stewardship and the importance of respecting natural resources."
+        }
+    },
+    "The Serpent of the Sacred Spring": {
+        mainImage: "images/sacred-spring.jpg",
+        additionalContent: {
+            fullStory: "Deep within a mountainous region, there was a sacred spring, its waters believed to possess healing properties. A large, benevolent serpent was said to be the guardian of this spring, ensuring its purity and protecting it from those with ill intent. A young, gravely ill traveler, guided by rumors of the spring's power, ventured into the mountains. Weak and desperate, he reached the spring and found the serpent coiled beside it. The serpent, sensing his pure heart, allowed him to drink from the spring. The traveler was miraculously healed, and in gratitude, he vowed to protect the sanctity of the spring. The serpent, pleased with his sincerity, revealed ancient secrets of healing and herbal remedies.",
+            historicalContext: "Sacred springs and their guardian spirits are common elements in Japanese folklore, often associated with healing and spiritual power.",
+            culturalImpact: "The story reflects the Japanese belief in the sacred nature of certain locations and the importance of maintaining their purity.",
+            modernInterpretation: "This tale speaks to the enduring human belief in the healing power of nature and the importance of preserving sacred spaces."
+        }
+    },
+    "Amaru of the Andes": {
+        mainImage: "images/amaru.jpg",
+        additionalContent: {
+            fullStory: "Amaru's presence in Andean cosmology is deeply intertwined with the concept of 'Pacha,' which encompasses both space and time. It's not merely a physical serpent but a manifestation of the earth's vital forces. Amaru's dwelling places are often described as subterranean lakes or rivers, linking it to the underworld ('Uku Pacha'). In Inca art and iconography, Amaru is frequently depicted with a combination of serpentine and feline features, emphasizing its power and ferocity. It's often shown with wings, symbolizing its ability to traverse different realms. The Inca believed that Amaru's movements influenced the water cycle, which was crucial for their agricultural society. When Amaru was angered or disturbed, it could cause devastating floods or earthquakes. To appease Amaru, they performed rituals involving offerings of coca leaves, chicha (corn beer), and precious objects. Stories tell of Amaru's role in the origin of rivers and lakes. It was believed that Amaru's tears or bodily fluids formed the water sources that sustained life in the Andes.",
+            historicalContext: "Amaru was central to Andean understanding of cosmic order and agricultural cycles, particularly important in the Inca Empire's sophisticated agricultural system.",
+            culturalImpact: "The myth of Amaru continues to influence Andean cultural practices and beliefs about the relationship between humans and natural forces.",
+            modernInterpretation: "Amaru represents the delicate balance between human civilization and natural forces, particularly relevant in discussions of environmental stewardship."
+        }
+    },
+    "The Horned Serpent": {
+        mainImage: "images/horned-serpent.jpg",
+        additionalContent: {
+            fullStory: "The Horned Serpent's appearance and characteristics vary significantly across different Indigenous nations. For example, among the Cherokee, Uktena is often described as a large, scaly serpent with a crystal on its forehead, which is a source of powerful magic. It's considered a dangerous creature, associated with storms and lightning. In other traditions, the Horned Serpent is seen as a benevolent being, a guardian of sacred springs and rivers. It's believed to possess healing powers and the ability to control the weather. Some stories tell of it guiding lost travelers or providing rain during droughts. The Horned Serpent is often depicted in rock art and ceremonial objects, reflecting its importance in Indigenous spiritual beliefs. Its horns are often seen as symbols of its connection to the spirit world, and its scales are sometimes associated with the patterns of water or the earth. Stories also talk about the scales of the horned serpent being used in medicine, and the crystal in its forehead being a powerful tool for shamans.",
+            historicalContext: "The Horned Serpent appears in the mythology of numerous Indigenous nations across North America, each with their own interpretation of its significance.",
+            culturalImpact: "This being continues to be an important figure in Indigenous spiritual practices and art, representing the connection between physical and spiritual realms.",
+            modernInterpretation: "The various interpretations of the Horned Serpent across different cultures demonstrate the diversity and richness of Indigenous spiritual traditions."
+        }
+    },
+    "Danh the Rainbow Serpent": {
+        mainImage: "images/danh.jpg",
+        additionalContent: {
+            fullStory: "Danh's role as the serpent that encircles the world is central to the Dahomey creation myth. It's believed that Danh's movements maintain the balance of the cosmos, preventing the earth from disintegrating. Danh is also associated with the rainbow, which is seen as a manifestation of its presence. The rainbow is considered a symbol of prosperity and good fortune, reinforcing Danh's connection to wealth. In Dahomey rituals, Danh is often represented by snakes or serpentine figures. Offerings of food and drink are made to honor Danh and ensure its continued benevolence. Danh is also a being of androgynous nature, representing the balance of male and female forces within the universe.",
+            historicalContext: "Danh is a central figure in Dahomey mythology, representing cosmic order and the cyclical nature of existence.",
+            culturalImpact: "The worship of Danh continues to influence West African spiritual practices and cultural expressions.",
+            modernInterpretation: "Danh's role as a cosmic maintainer of balance resonates with contemporary discussions about environmental harmony and social equilibrium."
+        }
     }
 };
 
@@ -111,7 +167,14 @@ const mythImages = {
     "Wadjet the Serpent Goddess": "myth_profile_photos/Wadjet.png",
     "Tiamat of Babylon": "myth_profile_photos/tiamat.png",
     "Dragon-Serpent Connection": "myth_profile_photos/chinese-dragon-serpent.webp",
-    "White Snake Legend": "myth_profile_photos/White-Snake.webp"
+    "White Snake Legend": "myth_profile_photos/White-Snake.webp",
+    // get images 
+    "Yamata no Orochi and Susanoo": "myth_profile_photos/yamata-no-orochi.png",
+    "Ryūjin and the Sea's Bounty": "myth_profile_photos/myojin.jpg",
+    "The Serpent of the Sacred Spring": "myth_profile_photos/sacred-spring.jpeg",
+    "Amaru of the Andes": "myth_profile_photos/amaru.webp",
+    "The Horned Serpent": "myth_profile_photos/horned-serpent.webp",
+    "Danh the Rainbow Serpent": "myth_profile_photos/danh.jpg"
 };
 
 // Function to load myth data from localStorage and combine with detailed information

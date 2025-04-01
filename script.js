@@ -312,30 +312,308 @@ const serpentLocations = [
                 symbolism: "Integration of Physical and Spiritual Realms: It used its' earth bound serpent body in harmony with its' sky-reaching feathers to form a reality containing physical and spiritual aspects."
             }
         ]
+        //new ones
+    },
+    {
+        name: "Yamata no Orochi and Susanoo",
+        location: [35.367, 132.755],
+        culture: "Japanese",
+        description: "The epic tale of the storm god Susanoo's battle with the eight-headed serpent Yamata no Orochi.",
+        timeline: [
+            {
+                title: "The Serpent's Terror",
+                date: "Ancient Times",
+                content: "Yamata no Orochi was a colossal, eight-headed, eight-tailed serpent that terrorized the province of Izumo. Every year, it demanded a sacrifice: a young maiden. When Susanoo, the storm god, was banished from the heavens, he encountered an elderly couple, Kunitsukami, weeping. They revealed that their eighth and last daughter, Kushinada-hime, was to be Orochi's next victim.",
+                symbolism: "Overcoming Chaos: Orochi represents natural disasters, floods, and the chaotic forces of nature that threaten human existence."
+            },
+            {
+                title: "Susanoo's Strategy",
+                date: "Divine Intervention",
+                content: "Susanoo devised a plan. He instructed the couple to brew eight vats of strong sake and set them out for the serpent. When Orochi arrived, it drank the sake and fell into a deep slumber.",
+                symbolism: "Divine Protection: Susanoo's role as a protector highlights the importance of divine intervention in safeguarding humanity from destructive forces."
+            },
+            {
+                title: "The Sacred Sword",
+                date: "Victory",
+                content: "Susanoo then drew his sword, Totsuka-no-Tsurugi, and sliced the serpent into pieces. As he cut through one of the tails, he discovered the legendary sword Kusanagi-no-Tsurugi within. Susanoo then presented the sword to his sister, Amaterasu, as a peace offering.",
+                symbolism: "Imperial Regalia: The discovery of Kusanagi-no-Tsurugi within Orochi's body connects the myth to the imperial lineage and the sacred power of the Japanese emperors."
+            }
+        ]
+    },
+    {
+        name: "Ryūjin and the Sea's Bounty",
+        location: [34.943627379693275, 138.4085850816026],
+        culture: "Japanese",
+        description: "The tale of Ryūjin, the guardian sea serpent who protected and provided for coastal villages.",
+        timeline: [
+            {
+                title: "Guardian of the Sea",
+                date: "Ancient Times",
+                content: "In coastal villages, tales were told of Ryūjin, a massive sea serpent that resided in the depths of the ocean. While sometimes fearsome, Ryūjin was also seen as a guardian of the sea's bounty. Fishermen would offer prayers and small gifts to Ryūjin, seeking its favor for a plentiful catch.",
+                symbolism: "Dual Nature of Nature: Ryūjin represents the dual nature of the sea, both dangerous and life-giving. It embodies the respect and reverence that humans must have for the natural world."
+            },
+            {
+                title: "The Great Famine",
+                date: "Time of Crisis",
+                content: "One year, a severe famine struck the village. The fishermen, desperate, decided to make a grand offering to Ryūjin, hoping to appease its wrath and secure a source of food. They prepared a beautiful, decorated boat filled with the best of their harvest and set it adrift, carrying their prayers.",
+                symbolism: "Balance and Harmony: The fishermen's offerings and Ryūjin's response illustrate the importance of maintaining balance and harmony with nature."
+            },
+            {
+                title: "Divine Providence",
+                date: "Salvation",
+                content: "Ryūjin, accepting the offering, guided schools of fish towards the shore, saving the village from starvation. It was then understood that Ryūjin was not only a powerful being, but also a provider.",
+                symbolism: "Divine Provision: Ryūjin's role as a provider highlights the belief that supernatural beings can influence the prosperity and survival of human communities."
+            }
+        ]
+    },
+    {
+        name: "The Serpent of the Sacred Spring",
+        location: [35.97701044451741, 137.03833272824994],
+        culture: "Japanese",
+        description: "The story of a benevolent serpent guardian of a healing spring in the mountains.",
+        timeline: [
+            {
+                title: "The Sacred Guardian",
+                date: "Ancient Times",
+                content: "Deep within a mountainous region, there was a sacred spring, its waters believed to possess healing properties. A large, benevolent serpent was said to be the guardian of this spring, ensuring its purity and protecting it from those with ill intent.",
+                symbolism: "Healing and Renewal: The serpent's guardianship of the spring symbolizes the healing and restorative powers of nature."
+            },
+            {
+                title: "The Ill Traveler",
+                date: "Time of Need",
+                content: "A young, gravely ill traveler, guided by rumors of the spring's power, ventured into the mountains. Weak and desperate, he reached the spring and found the serpent coiled beside it. The serpent, sensing his pure heart, allowed him to drink from the spring.",
+                symbolism: "Purity and Protection: The serpent's protection of the spring represents the importance of preserving the sacred and pure aspects of the natural world."
+            },
+            {
+                title: "Sacred Knowledge",
+                date: "Divine Gift",
+                content: "The traveler was miraculously healed, and in gratitude, he vowed to protect the sanctity of the spring. The serpent, pleased with his sincerity, revealed ancient secrets of healing and herbal remedies.",
+                symbolism: "Wisdom and Guidance: The serpent's role as a guardian and teacher highlights its association with wisdom and spiritual guidance."
+            }
+        ]
+    },
+    {
+        name: "Amaru of the Andes",
+        location: [-7.295871033873188, -77.63304292889165],
+        culture: "Andean",
+        description: "The powerful serpent deity that controlled the water cycle and maintained cosmic balance in Andean mythology.",
+        timeline: [
+            {
+                title: "Cosmic Force",
+                date: "Ancient Times",
+                content: "Amaru's presence in Andean cosmology is deeply intertwined with the concept of 'Pacha,' which encompasses both space and time. It's not merely a physical serpent but a manifestation of the earth's vital forces. Amaru's dwelling places are often described as subterranean lakes or rivers, linking it to the underworld ('Uku Pacha').",
+                symbolism: "Cyclical Time: Amaru's connection to the water cycle reinforces the Andean concept of cyclical time, where destruction and renewal are intertwined."
+            },
+            {
+                title: "Divine Power",
+                date: "Throughout History",
+                content: "In Inca art and iconography, Amaru is frequently depicted with a combination of serpentine and feline features, emphasizing its power and ferocity. It's often shown with wings, symbolizing its ability to traverse different realms. The Inca believed that Amaru's movements influenced the water cycle, which was crucial for their agricultural society.",
+                symbolism: "Connection to the Underworld: Uku Pacha was the source of life-giving waters, but also the place of death and origins."
+            },
+            {
+                title: "Water's Origin",
+                date: "Creation Time",
+                content: "Stories tell of Amaru's role in the origin of rivers and lakes. It was believed that Amaru's tears or bodily fluids formed the water sources that sustained life in the Andes. When Amaru was angered or disturbed, it could cause devastating floods or earthquakes. To appease Amaru, they performed rituals involving offerings of coca leaves, chicha (corn beer), and precious objects.",
+                symbolism: "Social and Agricultural Dependence: The Incan empire was built on a complex agricultural system. The Amaru myth reinforced the idea that humans were dependent on the forces of nature."
+            }
+        ]
+    },
+    {
+        name: "The Horned Serpent",
+        location: [46.96609557797087, -103.29710386833581],
+        culture: "Indigenous North American",
+        description: "A powerful serpent being revered across various Indigenous nations, known for its spiritual power and connection to water.",
+        timeline: [
+            {
+                title: "Sacred Being",
+                date: "Ancient Times",
+                content: "The Horned Serpent's appearance and characteristics vary significantly across different Indigenous nations. For example, among the Cherokee, Uktena is often described as a large, scaly serpent with a crystal on its forehead, which is a source of powerful magic. It's considered a dangerous creature, associated with storms and lightning.",
+                symbolism: "Duality of Nature: The Horned Serpent's dual nature, both benevolent and malevolent, reflects the Indigenous understanding of the natural world as a complex and dynamic force."
+            },
+            {
+                title: "Guardian Spirit",
+                date: "Throughout Time",
+                content: "In other traditions, the Horned Serpent is seen as a benevolent being, a guardian of sacred springs and rivers. It's believed to possess healing powers and the ability to control the weather. Some stories tell of it guiding lost travelers or providing rain during droughts.",
+                symbolism: "Connection to Water and Life: Water is essential for life, and the Horned Serpent's association with it highlights its role as a life-giving force."
+            },
+            {
+                title: "Sacred Power",
+                date: "Eternal",
+                content: "The Horned Serpent is often depicted in rock art and ceremonial objects, reflecting its importance in Indigenous spiritual beliefs. Its horns are often seen as symbols of its connection to the spirit world, and its scales are sometimes associated with the patterns of water or the earth. Stories also talk about the scales of the horned serpent being used in medicine, and the crystal in its forehead being a powerful tool for shamans.",
+                symbolism: "Spiritual Knowledge and Power: The Horned Serpent's horns and crystal symbolize its connection to spiritual knowledge and power, which are often reserved for shamans and other spiritual leaders."
+            }
+        ]
+    },
+    {
+        name: "Danh the Rainbow Serpent",
+        location: [7.603323267182453, 5.5114832653349755],
+        culture: "West African",
+        description: "The cosmic serpent that encircles the world and maintains universal balance in Dahomey mythology.",
+        timeline: [
+            {
+                title: "Cosmic Guardian",
+                date: "Creation Time",
+                content: "Danh's role as the serpent that encircles the world is central to the Dahomey creation myth. It's believed that Danh's movements maintain the balance of the cosmos, preventing the earth from disintegrating.",
+                symbolism: "Cosmic Stability: Danh's role in maintaining cosmic stability reflects the Dahomey belief in a structured and ordered universe."
+            },
+            {
+                title: "Rainbow Manifestation",
+                date: "Throughout Time",
+                content: "Danh is also associated with the rainbow, which is seen as a manifestation of its presence. The rainbow is considered a symbol of prosperity and good fortune, reinforcing Danh's connection to wealth.",
+                symbolism: "Interconnectedness: The concept of Danh encircling the world emphasizes the interconnectedness of all things, both physical and spiritual."
+            },
+            {
+                title: "Divine Balance",
+                date: "Eternal",
+                content: "In Dahomey rituals, Danh is often represented by snakes or serpentine figures. Offerings of food and drink are made to honor Danh and ensure its continued benevolence. Danh is also a being of androgynous nature, representing the balance of male and female forces within the universe.",
+                symbolism: "Prosperity and Fertility: Danh's association with the rainbow and wealth highlights the connection between the natural world and human prosperity and fertility."
+            }
+        ]
     }
 ];
 
-// Heres where you can add a custom icon for serpent locations with a more medieval style
-// Below is the current icon
-const serpentIcon = L.icon({
+// Create custom icons for each culture/myth with different colors
+const serpentIcons = {
+    // Greek Mythology - Red
+    "Python and Apollo at Delphi": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    "Medusa the Gorgon": L.icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
-});
-
-// This is what the custom icon could look like
-//const serpentIcon = {
-//  "Chinese": L.Divicon({ // Depending on what you want the icon to be. This doesn't need to be a div. But I noticed that making it a div allows it to show up properly.
-//    className: 'custom-icon',
-//    html: <div class="custom-icon">🐍</div>, // You can all use iconUrl here, if you have an icon image on the web. As well as the shadowUrl.
-//    iconSize: [25, 41],
-//    iconAnchor: [12, 41],
-//    popupAnchor: [1, -34],
-//  }
-
+    }),
+    
+    // Chinese Mythology - Purple
+    "Nuwa and Fuxi": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    "White Snake Legend": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    "Dragon-Serpent Connection": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    
+    // Egyptian Mythology - Yellow
+    "Wadjet the Serpent Goddess": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    
+    // Babylonian Mythology - Orange
+    "Tiamat of Babylon": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    
+    // Norse Mythology - Blue
+    "Jörmungandr the World Serpent": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    
+    // Mesoamerican Mythology - Green
+    "Feathered Serpent of Oaxaca": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    
+    // Japanese Mythology - Orange Dark
+    "Yamata no Orochi and Susanoo": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    "Ryūjin and the Sea's Bounty": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    "The Serpent of the Sacred Spring": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    
+    // Andean Mythology - Gold
+    "Amaru of the Andes": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    
+    // Indigenous North American - Black
+    "The Horned Serpent": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    }),
+    
+    // West African - Grey
+    "Danh the Rainbow Serpent": L.icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    })
+};
 
 // Function to create timeline navigation
 // If you change the map color. No matter what the color is set to in this section. It will stay as the map color:. 
@@ -459,7 +737,7 @@ document.addEventListener('click', (e) => {
 // Adds markers for each location with the timeline popup styling.
 serpentLocations.forEach((location, index) => {
     const marker = L.marker(location.location, {
-        icon: serpentIcon
+        icon: serpentIcons[location.name]
     });
     
     // Added hover events for the title display
@@ -486,7 +764,7 @@ serpentLocations.forEach((location, index) => {
     // This is the popup that shows the timeline cards.
     const popup = L.popup({
         className: 'custom-popup',
-        maxWidth: 400,
+        maxWidth: 500,
         closeButton: true,
         closeOnClick: false,
         autoClose: false
@@ -502,7 +780,7 @@ serpentLocations.forEach((location, index) => {
         activePopup = popup;
         currentLocationIndex = index;
         currentTimelineIndex = 0;
-        
+
         // All below is for zooming in on the clicked pin.
         // Get the map container size.
         const mapHeight = map.getContainer().clientHeight;
